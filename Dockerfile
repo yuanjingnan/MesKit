@@ -26,9 +26,9 @@ RUN apt-get install -y --no-install-recommends \
         libopenblas0-pthread \
 		littler \
         r-cran-littler \
-		r-base=${R_BASE_VERSION}-* \
-		r-base-dev=${R_BASE_VERSION}-* \
-		r-recommended=${R_BASE_VERSION}-* \
+		r-base=${R_BASE_VERSION}* \
+		r-base-dev=${R_BASE_VERSION}* \
+		r-recommended=${R_BASE_VERSION}* \
 	&& ln -s /usr/lib/R/site-library/littler/examples/build.r /usr/local/bin/build.r \
 	&& ln -s /usr/lib/R/site-library/littler/examples/check.r /usr/local/bin/check.r \
 	&& ln -s /usr/lib/R/site-library/littler/examples/install.r /usr/local/bin/install.r \
