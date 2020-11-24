@@ -1,4 +1,4 @@
-FROM debian:10
+FROM debian:latest
 #ENV DEBIAN_FRONTEND noninteractive
 
 # Set the 
@@ -14,7 +14,8 @@ RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && \
 
 ENV LANG en_US.UTF-8 
 
-RUN apt-get install --assume-yes apt-utils &&\
+RUN apt-get update && \
+    apt-get install -y --assume-yes apt-utils &&\
     apt-get install -y software-properties-common &&\
     apt-get install -y gnupg2 
 
