@@ -23,9 +23,7 @@ RUN apt-get update && \
 ENV R_BASE_VERSION 4.0.2
 
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends \
-        #gcc-9-base \
-        libopenblas0-pthread \
+    apt-get install -y --no-install-recommends libopenblas0-pthread \
 		littler \
         r-cran-littler \
 		r-base=${R_BASE_VERSION}* \
