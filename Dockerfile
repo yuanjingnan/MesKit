@@ -1,4 +1,4 @@
-FROM debian:bullseye
+FROM debian:10
 #ENV DEBIAN_FRONTEND noninteractive
 
 # Set the 
