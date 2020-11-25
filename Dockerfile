@@ -26,7 +26,7 @@ RUN apt update && apt-get update && \
     apt-get install -y --no-install-recommends libopenblas0-pthread \
 		littler \
         r-cran-littler \
-        buster-cran40 \
+        #buster-cran40 \
         r-base \
         r-base-dev \
         r-recommended \
