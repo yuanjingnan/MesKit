@@ -1,4 +1,4 @@
-FROM debian:10.6
+FROM debian:testing
 #ENV DEBIAN_FRONTEND noninteractive
 
 # Set the 
@@ -26,13 +26,12 @@ RUN apt update && apt-get update && \
     apt-get install -y libopenblas0-pthread \
 		littler \
         r-cran-littler \
-        #buster-cran40 \
-        r-base \
-        r-base-dev \
-        r-recommended \
-		#r-base=${R_BASE_VERSION}* \
-		#r-base-dev=${R_BASE_VERSION}* \
-		#r-recommended=${R_BASE_VERSION}* \
+        #r-base \
+        #r-base-dev \
+        #r-recommended \
+		r-base=${R_BASE_VERSION}* \
+		r-base-dev=${R_BASE_VERSION}* \
+		r-recommended=${R_BASE_VERSION}* \
 	&& ln -s /usr/lib/R/site-library/littler/examples/build.r /usr/local/bin/build.r \
 	&& ln -s /usr/lib/R/site-library/littler/examples/check.r /usr/local/bin/check.r \
 	&& ln -s /usr/lib/R/site-library/littler/examples/install.r /usr/local/bin/install.r \
