@@ -1,4 +1,4 @@
-FROM debian:10
+FROM debian:10.6
 #ENV DEBIAN_FRONTEND noninteractive
 
 # Set the 
@@ -23,7 +23,7 @@ RUN apt-get update && \
 #ENV R_BASE_VERSION 4.0.2
 
 RUN apt update && apt-get update && \
-    apt-get install -y --no-install-recommends libopenblas0-pthread \
+    apt-get install -y libopenblas0-pthread \
 		littler \
         r-cran-littler \
         #buster-cran40 \
