@@ -1,4 +1,4 @@
-FROM debian:testing
+FROM debian:latest
 #ENV DEBIAN_FRONTEND noninteractive
 
 # Set the 
