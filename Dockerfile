@@ -22,7 +22,7 @@ RUN apt-get update && \
 ## Now install R and littler, and create a link for littler in /usr/local/bin
 #ENV R_BASE_VERSION 4.0.2
 
-RUN apt-get update && \
+RUN apt update && apt-get update && \
     apt-get install -y --no-install-recommends libopenblas0-pthread \
 		littler \
         r-cran-littler \
