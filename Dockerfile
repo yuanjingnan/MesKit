@@ -20,19 +20,19 @@ RUN apt-get update && \
     apt-get install -y gnupg2 
 
 ## Now install R and littler, and create a link for littler in /usr/local/bin
-ENV R_BASE_VERSION 4.0.2
+#ENV R_BASE_VERSION 4.0.2
 
 RUN apt-key adv --keyserver keys.gnupg.net --recv-key 'E19F5F87128899B192B1A2C2AD5F960A256A04AF'
 RUN apt update && apt-get update && \
     apt-get install -y libopenblas0-pthread \
 		littler \
         r-cran-littler \
-        #r-base \
-        #r-base-dev \
-        #r-recommended \
-		r-base=${R_BASE_VERSION}* \
-		r-base-dev=${R_BASE_VERSION}* \
-		r-recommended=${R_BASE_VERSION}* \
+        r-base \
+        r-base-dev \
+        r-recommended \
+		# r-base=${R_BASE_VERSION}* \
+		# r-base-dev=${R_BASE_VERSION}* \
+		# r-recommended=${R_BASE_VERSION}* \
 	&& ln -s /usr/lib/R/site-library/littler/examples/build.r /usr/local/bin/build.r \
 	&& ln -s /usr/lib/R/site-library/littler/examples/check.r /usr/local/bin/check.r \
 	&& ln -s /usr/lib/R/site-library/littler/examples/install.r /usr/local/bin/install.r \
@@ -73,7 +73,9 @@ RUN wget https://download3.rstudio.org/ubuntu-14.04/x86_64/shiny-server-1.5.9.92
 
 # MesKit part:
 RUN R -e "BiocManager::install(c('BSgenome', 'GenomeInfoDb', 'org.Hs.eg.db', 'BSgenome.Hsapiens.UCSC.hg19'))" 
-RUN R -e "devtools::install_github('Niinleslie/MesKit', ref = 'master')"
+RUN R -e "BiocManager::install(version='devel')"
+RUN R -e "BiocManager::install("MesKit")"
+#RUN R -e "devtools::install_github('Niinleslie/MesKit', ref = 'master')"
 
 # shiny server application & configuration
 #COPY shiny-server.conf  /etc/shiny-server/shiny-server.conf
