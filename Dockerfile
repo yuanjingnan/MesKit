@@ -6,9 +6,10 @@ FROM ubuntu:18.04
 
 ADD sources.list /etc/apt/sources.list
 
-RUN apt-get clean && \
+RUN apt-get autoclean && \
     apt-get update && \
     apt-get -y upgrade && \
+    apt-get -u dist-upgrade && \
     apt-get install -y --no-install-recommends locales && \
     apt-get install -y libterm-readkey-perl
 
