@@ -1,6 +1,6 @@
-FROM ubuntu:18.04
-#FROM debian:testing
-#ENV DEBIAN_FRONTEND noninteractive
+#FROM ubuntu:18.04
+FROM debian:testing
+ENV DEBIAN_FRONTEND noninteractive
 
 # Set the 
 
@@ -25,7 +25,7 @@ RUN apt-get update && \
     apt-get install -y gnupg2 
 
 ## Now install R and littler, and create a link for littler in /usr/local/bin
-RUN echo "deb https://cloud.r-project.org/bin/linux/ubuntu bionic-cran40/" > /etc/apt/sources.list.d/cran.list
+# RUN echo "deb https://cloud.r-project.org/bin/linux/ubuntu bionic-cran40/" > /etc/apt/sources.list.d/cran.list
 # note the proxy for gpg
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 51716619E084DAB9
 
