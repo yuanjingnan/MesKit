@@ -17,7 +17,7 @@ RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && \
 
 ENV LANG en_US.UTF-8 
 
-RUN apt-get update && \
+RUN RUN apt-get clean && apt-get update && \
     apt-get install -y --assume-yes apt-utils &&\
     apt-get install -y software-properties-common &&\
     apt-get install -y gnupg2 
