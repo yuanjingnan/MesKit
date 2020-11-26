@@ -1,5 +1,5 @@
 #FROM ubuntu:18.04
-FROM debian:buster
+FROM debian:10.6
 ENV DEBIAN_FRONTEND noninteractive
 
 # Set the 
