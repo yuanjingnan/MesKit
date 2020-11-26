@@ -1,11 +1,5 @@
-deb http://mirrors.tuna.tsinghua.edu.cn/debian/ stretch main contrib non-free
-#deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch main contrib non-free
-deb http://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-updates main contrib non-free
-#deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-updates main contrib non-free
-deb http://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-backports main contrib non-free
-#deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-backports main contrib non-free
-deb http://mirrors.tuna.tsinghua.edu.cn/debian-security stretch/updates main contrib non-free
-#deb-src https://mirrors.tuna.tsinghua.edu.cn/debian-security stretch/updates main contrib non-free
+deb http://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib non-free
+#deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib non-free
 
 #deb http://mirrors.163.com/ubuntu/ trusty main restricted universe multiverse
 #deb http://mirrors.163.com/ubuntu/ trusty-security main restricted universe multiverse
