@@ -1,10 +1,10 @@
 #FROM ubuntu:18.04
-FROM debian:testing
+FROM debian:buster
 ENV DEBIAN_FRONTEND noninteractive
 
 # Set the 
 
-ADD sources.list /etc/apt/sources.list
+#ADD sources.list /etc/apt/sources.list
 
 RUN apt-get autoclean && \
     apt-get update && \
