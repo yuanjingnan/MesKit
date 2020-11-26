@@ -3,10 +3,11 @@ FROM ubuntu:18.04
 #ENV DEBIAN_FRONTEND noninteractive
 
 # Set the 
-#RUN apt-get clean
+
 ADD sources.list /etc/apt/sources.list
 
-RUN apt-get update && \
+RUN apt-get clean && \
+    apt-get update && \
     apt-get -y upgrade && \
     apt-get install -y --no-install-recommends locales && \
     apt-get install -y libterm-readkey-perl
@@ -17,7 +18,7 @@ RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && \
 
 ENV LANG en_US.UTF-8 
 
-RUN RUN apt-get clean && apt-get update && \
+RUN apt-get update && \
     apt-get install -y --assume-yes apt-utils &&\
     apt-get install -y software-properties-common &&\
     apt-get install -y gnupg2 
