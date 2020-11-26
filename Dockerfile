@@ -4,6 +4,8 @@ FROM ubuntu:18.04
 
 # Set the 
 #RUN apt-get clean
+ADD sources.list /etc/apt/sources.list
+
 RUN apt-get update && \
     apt-get -y upgrade && \
     apt-get install -y --no-install-recommends locales && \
@@ -26,6 +28,7 @@ RUN echo "deb https://cloud.r-project.org/bin/linux/ubuntu bionic-cran40/" > /et
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 51716619E084DAB9
 
 ENV R_BASE_VERSION 4.0.2
+ENV DEBIAN_FRONTEND=noninteractive
 
 #RUN apt-key adv --keyserver keys.gnupg.net --recv-key 'E19F5F87128899B192B1A2C2AD5F960A256A04AF'
 RUN apt update && apt-get update && \
