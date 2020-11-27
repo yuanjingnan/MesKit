@@ -1,5 +1,5 @@
 #FROM ubuntu:18.04
-FROM debian:10.6
+FROM debian:stable
 ENV DEBIAN_FRONTEND noninteractive
 
 # Set the 
@@ -26,7 +26,8 @@ RUN apt-get update && \
 ## Now install R and littler, and create a link for littler in /usr/local/bin
 # RUN echo "deb https://cloud.r-project.org/bin/linux/ubuntu bionic-cran40/" > /etc/apt/sources.list.d/cran.list
 # note the proxy for gpg
-RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 51716619E084DAB9
+RUN deb http://cloud.r-project.org/bin/linux/debian buster-cran40/
+#RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 51716619E084DAB9
 
 #ENV R_BASE_VERSION 4.0.2
 ENV DEBIAN_FRONTEND=noninteractive
