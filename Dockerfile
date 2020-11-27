@@ -38,7 +38,8 @@ RUN apt update && apt-get update && \
         r-base \
         r-base-dev \
         r-recommended \
-        r-cran-cairo \
+        libcairo2-dev \
+        # r-cran-cairo \
 		# r-base=${R_BASE_VERSION}* \
 		# r-base-dev=${R_BASE_VERSION}* \
 		# r-recommended=${R_BASE_VERSION}* \
