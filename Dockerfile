@@ -24,8 +24,8 @@ RUN apt-get update && \
 ## Now install R and littler, and create a link for littler in /usr/local/bin
 # RUN echo "deb https://cloud.r-project.org/bin/linux/ubuntu bionic-cran40/" > /etc/apt/sources.list.d/cran.list
 # note the proxy for gpg
-RUN apt-key adv --keyserver keys.gnupg.net --recv-key 'E19F5F87128899B192B1A2C2AD5F960A256A04AF'
-RUN echo "deb http://cloud.r-project.org/bin/linux/debian buster-cran40/" > /etc/apt/sources.list
+#RUN apt-key adv --keyserver keys.gnupg.net --recv-key 'E19F5F87128899B192B1A2C2AD5F960A256A04AF'
+#RUN echo "deb http://cloud.r-project.org/bin/linux/debian buster-cran40/" > /etc/apt/sources.list
 #RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 51716619E084DAB9
 
 #ENV R_BASE_VERSION 4.0.2
