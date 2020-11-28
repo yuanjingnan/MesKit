@@ -1,5 +1,5 @@
 #FROM ubuntu:18.04
-FROM debian:latest
+FROM debian:testing
 ENV DEBIAN_FRONTEND noninteractive
 
 #ADD sources.list /etc/apt/sources.list
