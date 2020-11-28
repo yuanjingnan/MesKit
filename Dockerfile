@@ -7,8 +7,8 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get autoclean && \
     apt-get update && \
     apt-get -y upgrade && \
-    apt-get install -y --no-install-recommends locales libterm-readkey-perl && \
-    rm -rf /var/lib/apt/lists/*
+    apt-get install -y --no-install-recommends locales libterm-readkey-perl 
+    #rm -rf /var/lib/apt/lists/*
 
 RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && \
     dpkg-reconfigure --frontend=noninteractive locales && \
@@ -31,18 +31,17 @@ RUN apt-get update && \
 #ENV R_BASE_VERSION 4.0.2
 
 RUN apt update && apt-get update && \
-    #apt-get install -y libopenblas0-pthread \
-        apt-get install -y --no-install-recommends \
-		littler \
-        r-cran-littler \
-        r-base \
-        r-base-dev \
-        r-recommended \
-        #libcairo2-dev \
-        # r-cran-cairo \
-		# r-base=${R_BASE_VERSION}* \
-		# r-base-dev=${R_BASE_VERSION}* \
-		# r-recommended=${R_BASE_VERSION}* \
+    apt-get install -y --no-install-recommends libopenblas0-pthread \
+	littler \
+    r-cran-littler \
+    r-base \
+    r-base-dev \
+    r-recommended \
+    #libcairo2-dev \
+    # r-cran-cairo \
+	# r-base=${R_BASE_VERSION}* \
+	# r-base-dev=${R_BASE_VERSION}* \
+	# r-recommended=${R_BASE_VERSION}* \
 	&& ln -s /usr/lib/R/site-library/littler/examples/build.r /usr/local/bin/build.r \
 	&& ln -s /usr/lib/R/site-library/littler/examples/check.r /usr/local/bin/check.r \
 	&& ln -s /usr/lib/R/site-library/littler/examples/install.r /usr/local/bin/install.r \
