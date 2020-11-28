@@ -66,7 +66,8 @@ RUN apt-get -y update && apt-get install -y -f --no-install-recommends \
     libssl-dev \
     libxml2 \
     libxml2-dev \
-    libpng-dev
+    libpng-dev \
+    libcairo2-dev
 
 ## Configure default locale, see https://github.com/rocker-org/rocker/issues/19
 #RUN apt-get clean && apt-get -y update && apt-get install -y locales && locale-gen en_US.UTF-8
